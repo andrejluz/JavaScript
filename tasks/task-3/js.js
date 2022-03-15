@@ -1,19 +1,34 @@
 
-const todoList = [];
-
-
-
-
-
-let ivestaKomanda = prompt('Prasome ivesti komanda ?');
-
-while(ivestaKomanda !== 'quit') {
-    if (ivestaKomanda === 'list') {
-        ivestaKomanda = prompt('Iveskyte nauja darba');
-        todoList.push(ivestaKomanda);
-    }
-    console.log('Vartotojas neivedet quit');
-    ivestaKomanda = prompt('Prasome ivesti sekanti komanda ?');
+let promptTekstas = {
+    pradinis : 'PRASOME IVESTI KOMANDA IS SARASO: \n\t new - leidzia sukruti nauja irasa \n\t  list - isveda i console visas musu     sukurtus darbus \n\t delete - pasalina nurodyta darba is saraso \n\t quit - uzdaro applikacija' ,
+    naujasDarbasText : 'Iveskyte nauja darba',
+    deleteText:  'Iveskyte indeksa kuri istrinti !!!'
 }
 
-console.log(todoList);
+const todoList = [];
+
+let ivestaKomanda = prompt(promptTekstas.pradinis);
+
+while(ivestaKomanda !== 'quit') {
+    if (ivestaKomanda === 'new') {
+        ivestaKomanda = prompt(promptTekstas.naujasDarbasText);
+        todoList.push(ivestaKomanda);
+    } 
+    else if (ivestaKomanda === 'list') {
+        for (let i =0; i < todoList.length; i++) {
+            console.log(`ìndeksas: ${i} ---> darbas: ${todoList[i]}`);
+            ivestaKomanda = prompt(promptTekstas.pradinis);
+        }
+
+    }else if (todoList.length === false) {
+            console.log('Nera ivestu darbu');
+    }
+     else if (ivestaKomanda === 'delete') {
+            let indeksas =prompt(promptTekstas.deleteText);
+            todoList.splice(indeksas, 1);
+    }
+    console.log('Vartotojas neivedet quit');
+    ivestaKomanda = prompt(promptTekstas.pradinis);
+}
+
+console.log(`Listas baigtas pildyti \n ${todoList}`);
