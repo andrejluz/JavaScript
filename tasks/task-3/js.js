@@ -1,4 +1,3 @@
-
 let promptTekstas = {
     pradinis : 'PRASOME IVESTI KOMANDA IS SARASO: \n\t new - leidzia sukruti nauja irasa \n\t  list - isveda i console visas musu     sukurtus darbus \n\t delete - pasalina nurodyta darba is saraso \n\t quit - uzdaro applikacija' ,
     naujasDarbasText : 'Iveskyte nauja darba',
@@ -19,15 +18,15 @@ while(ivestaKomanda !== 'quit') {
             console.log(`ìndeksas: ${i} ---> darbas: ${todoList[i]}`);
             ivestaKomanda = prompt(promptTekstas.pradinis);
         }
-
-    }else if (todoList.length === false) {
+        if (todoList.length === 0 ) {
             console.log('Nera ivestu darbu');
-    }
-     else if (ivestaKomanda === 'delete') {
+          }
+
+    }  else if (ivestaKomanda === 'delete') {
             let indeksas =prompt(promptTekstas.deleteText);
             todoList.splice(indeksas, 1);
     }
-    console.log('Vartotojas neivedet quit');
+    console.log('Norint iseiti iveskyte  -> quit');
     ivestaKomanda = prompt(promptTekstas.pradinis);
 }
 
