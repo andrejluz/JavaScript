@@ -74,15 +74,19 @@ let zodis = "zodis";
 function dideleRaide(zodis) {
 
      const array = zodis.split(' ');
-   
+     let word = ' ';
+
      for ( let i = 0; i < array.length; i++) {
             
-        for ( let j = 0; j < array[i].length; j++) {
-                if (array[i][j] === array[i][0]) {
-                    console.log(array[i][j].toUpperCase() + array[i][j].slice(1));
+        for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] === array[i][0])  {
+                 word.push().array[i][j].toUpperCase();
                 }
         }
      }
-   
+     console.log(word);
+  
 }
 console.log(dideleRaide(zodis));
+
+//  array[i][array[i].length-1].toUpperCase()
