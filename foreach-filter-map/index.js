@@ -40,9 +40,9 @@ const knygosApieProgramavima = [
       console.log(el.author);
   }
 
-//   knygosApieProgramavima.forEach(function (el) {
-//       console.log(el.author);
-//   })
+  // knygosApieProgramavima.forEach(function (el) {
+  //     console.log(el.author);
+  // })
 
 //   knygosApieProgramavima.forEach(papildytiVertinima)
 
@@ -87,9 +87,14 @@ const skaiciai = [12,25,45,1,2,46,85,6,8,9];
 
 let newSkaiciai = skaiciai.map(item => item ** 2);
 
-newSkaiciai2 = skaiciai.map(function(item) {
+newSkaiciai2 = skaiciai.map(function (item){
     return item ** 2;
 });
 
-console.log(newSkaiciai);
-console.log(newSkaiciai2);
+// console.log(newSkaiciai);
+// console.log(newSkaiciai2);
+
+// knygosApieProgramavima.forEach( (el) => {
+//   console.log(el.title)
+// });
+
