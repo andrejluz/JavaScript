@@ -28,5 +28,24 @@ const septyniuKartotinis = function(num) {
 }
 
 
-console.log(septyniuKartotinis(213))
 
+function wordInHalf (word) {
+let newWord;
+   const      array = word.split('');
+
+    for (let i =0; i < array.length; i++) {
+        if (array[i].length %  2 != 0) {
+           let newString = array[i].splice(Math.floor(array[i].length/2), 1);
+            newWord = newString.join('');
+        } else {
+            return `zodis susideda is liginiaus skaiciaus ----> ${word}`
+        }  
+        return `naujas zodis ----> ${newWord}`;
+    }
+
+
+    
+}
+
+let word = "matematyk";
+console.log(wordInHalf(word))
