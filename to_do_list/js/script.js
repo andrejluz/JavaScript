@@ -6,25 +6,25 @@ let footerText = document.querySelector('.footer-text');
 
 
 
-let footerProgressDiv = document.querySelector('.footer-progress')
+let allTasks = 0;
+let completedTask = 0;
 let taskProgressMax = 100;
 let taskProgressValue = 0;
+
+
+
+let footerProgressDiv = document.querySelector('.footer-progress')
 let taskProgress = document.createElement('progress');
     taskProgress.setAttribute('max', taskProgressMax);
     taskProgress.setAttribute('value', taskProgressValue);
     taskProgress.classList.add('task-progress');
 
 
-
-
-let allTasks = 0;
-let completedTask = 0;
-
-     
+   
 
 footerProgressDiv.appendChild(taskProgress);
-
 footerText.innerHTML = `${completedTask} of ${allTasks}`;
+
 
 button.addEventListener('click', function() {
 
@@ -90,9 +90,6 @@ button.addEventListener('click', function() {
             let taskProgressValue =Math.floor((completedTask * 100) / allTasks);
             taskProgress.setAttribute('max', taskProgressMax);
             taskProgress.setAttribute('value', taskProgressValue);
-         
-
-          console.log(taskProgress);
         })
 
         footerText.innerHTML = `${completedTask} of ${allTasks}`;
