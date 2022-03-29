@@ -127,49 +127,81 @@ let duomenysIsBD = [
   cards.classList.add('cards')
   document.body.appendChild(cards);
 
-    //cards style
-    cards.style.width = '100%';
-    cards.style.height = '100%';
-    cards.style.padding = '20px 0';
-    cards.style.display = 'flex';
-    cards.style.justifyContent = 'space-around';
 
+
+
+    //css style
+    // cards.style.width = '100%';
+
+      // style function
+    function css(element, style) {
+      for (const property in style)
+          element.style[property] = style[property];
+  }
+
+  css(cards, {
+      width: '100%',
+      height: '100%',
+      padding: '20px 0',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+  });
 
 function createCard(arr) {
     arr.forEach(element => {
+
       // create card
       const card = document.createElement('div');
       card.classList.add('card')
       cards.appendChild(card);  
 
-      //card style 
-      card.style.width = '250px';
-      // card.style.height = '50%';
-      card.style.border = '1px solid #000';
-      card.style.display = 'flex';
-      card.style.padding = '15px 0';
-      card.style.flexDirection = 'column';
-      card.style.alignItems = 'center';
-      card.style.justifyContent = 'center';
-       
+      // card style 
+      css(card, {
+        width: '250px',
+        height: '100%',
+        padding: '15px 0',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        border: '1px solid #000',
+        marginBottom: '15px',
+    });
+ 
       // image
       const img = document.createElement('img');
       card.appendChild(img);
       img.setAttribute('src', element.photo);
 
       //img style 
-      img.style.width = '150px';
-      img.style.height = '150px';
-      img.style.borderRadius = '50%';
-      img.style.objectFit = 'cover';
-      img.style.alignSelf = 'center';
+
+      css(img, {
+        width: '150px',
+        height: '150px',
+        borderRadius: '50%',
+        objectFit: 'cover',
+        alignSelf: 'center'   
+    });
 
         // h2
       const h2 = document.createElement('h2');
       card.appendChild(h2);
       h2.innerText = element.name
 
-        h2.style.textAlign = 'center';
+        css(h2, {
+          textAlign: 'center',
+      });
+
+      //city 
+      const p = document.createElement('p');
+      card.appendChild(p);
+      p.innerText = element.address.city
+
+      // p style
+      css(p, {
+        marginTop: '0',
+    });
 
       // link 
       const a = document.createElement('a');
@@ -181,31 +213,54 @@ function createCard(arr) {
       const socialLink = document.createElement('div');
       socialLink.classList.add('social-link')
       card.appendChild(socialLink); 
-        socialLink.style.marginTop = '20px';
+
+
+          css(socialLink, {
+            marginTop: '20px',
+        });
+
 
       //facebook
       const iFaceebok = document.createElement('i');
       socialLink.appendChild(iFaceebok);
       iFaceebok.setAttribute('class', 'bi bi-facebook');
 
-      iFaceebok.style.fontSize = '25px';
+    
+      css(iFaceebok, {
+        fontSize: '25px',
+    });
 
       //twitter
       const iTwitter = document.createElement('i');
       socialLink.appendChild(iTwitter);
       iTwitter.setAttribute('class', 'bi bi-twitter');
 
-      iTwitter.style.fontSize = '25px';
-      iTwitter.style.margin = '0 10px';
+      css(iTwitter, {
+        fontSize: '25px',
+        margin: '0 10px',
+    });
 
       //linkedin
       const iLinkedin = document.createElement('i');
       socialLink.appendChild(iLinkedin);
       iLinkedin.setAttribute('class', 'bi bi-linkedin');
 
-      iLinkedin.style.fontSize = '25px';
+      css(iLinkedin, {
+        fontSize: '25px',
+    });
    
     });
+
+let newCard = `
+    <div class="card">
+    <img src="${element.photo}" />
+    <h2>${element.name }</h2>
+    <p>${element.address.city }</p>
+    </div>
+`;
+
+cards.insertAdjacentHTML('beforeend', newCard)
+
 }
 
 createCard(duomenysIsBD);
