@@ -26,19 +26,6 @@ footerProgressDiv.appendChild(taskProgress);
 footerText.innerHTML = `${completedTask} of ${allTasks}`;
 
 
-// which
-
-
-
-// input.addEventListener("keypress", function(event) {
-//     if (event.which === 13) {
-//         event.preventDefault();
-//         console.log(event)
-//     }
-// });
-
-
-
 button.addEventListener('click', function() {
 
              let li = document.createElement('li');
