@@ -86,7 +86,7 @@ button.addEventListener('click', function() {
           allTasks = document.querySelectorAll('.todo-item').length;
           footerText.innerHTML = `${completedTask} of ${allTasks}`;
 
-            let taskProgressValue =Math.floor((completedTask * 100) / allTasks);
+            let taskProgressValue =Math.floor((completedTask * taskProgressMax) / allTasks);
             taskProgress.setAttribute('max', taskProgressMax);
             taskProgress.setAttribute('value', taskProgressValue);
         })
@@ -101,7 +101,7 @@ button.addEventListener('click', function() {
            footerText.innerHTML = `${completedTask} of ${allTasks}`;
 
 
-           let taskProgressValue =Math.floor((completedTask * 100) / allTasks);
+           let taskProgressValue =Math.floor((completedTask * taskProgressMax) / allTasks);
             taskProgress.setAttribute('max', taskProgressMax);
             taskProgress.setAttribute('value', taskProgressValue);
         });
@@ -113,7 +113,7 @@ button.addEventListener('click', function() {
                 allTasks = document.querySelectorAll('.todo-item').length;
                 footerText.innerHTML = `${completedTask} of ${allTasks}`;
 
-            let taskProgressValue =Math.floor((completedTask * 100) / allTasks);
+            let taskProgressValue =Math.floor((completedTask * taskProgressMax) / allTasks);
             taskProgress.setAttribute('max', taskProgressMax);
             taskProgress.setAttribute('value', taskProgressValue);
             }
@@ -121,6 +121,7 @@ button.addEventListener('click', function() {
  
             let editClick = 0;
         
+ 
                 iconEdit.addEventListener('click', function() {
             
                     if (editClick < 1) {
@@ -147,7 +148,15 @@ button.addEventListener('click', function() {
                         editUl.appendChild(editLi)
                         editLi.appendChild(inputEdit);
                         editLi.appendChild(editButton)
-                        inputEdit.setAttribute('value', p.innerHTML)          
+                        inputEdit.setAttribute('value', p.innerHTML)  
+                        
+                        
+                            inputEdit.addEventListener('keypress', function(event) {
+                                if(event.code === 'Enter') {
+                                    editButton.click();
+                                }
+                            })
+
                         editButton.addEventListener('click', function() {
             
                             if (inputEdit.value.length > 0) {
