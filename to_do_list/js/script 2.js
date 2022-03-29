@@ -26,21 +26,15 @@ footerProgressDiv.appendChild(taskProgress);
 footerText.innerHTML = `${completedTask} of ${allTasks}`;
 
 
-
-
-
-
 // which
 
 
 
-input.addEventListener("keypress", function(event) {
-    if (event.which === 13) {
+button.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
         event.preventDefault();
-        button.click();
     }
 });
-
 
 
 
