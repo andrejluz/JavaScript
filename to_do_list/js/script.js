@@ -4,13 +4,10 @@ const input =  document.querySelector('#add-work-input');
 let footerText = document.querySelector('.footer-text');
 
 
-
-
 let allTasks = 0;
 let completedTask = 0;
 let taskProgressMax = 100;
 let taskProgressValue = 0;
-
 
 
 let footerProgressDiv = document.querySelector('.footer-progress')
@@ -19,30 +16,14 @@ let taskProgress = document.createElement('progress');
     taskProgress.setAttribute('value', taskProgressValue);
     taskProgress.classList.add('task-progress');
 
-
-   
-
 footerProgressDiv.appendChild(taskProgress);
 footerText.innerHTML = `${completedTask} of ${allTasks}`;
 
-
-
-
-
-
-// which
-
-
-
 input.addEventListener("keypress", function(event) {
     if (event.which === 13) {
-        event.preventDefault();
         button.click();
     }
 });
-
-
-
 
 button.addEventListener('click', function() {
 
