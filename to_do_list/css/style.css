@@ -7,7 +7,15 @@
 body {
     background-color: #307A9E;
 }
+/* Graziai padarytas css, faina, kad nepatingejai nes 
+frontEdnde svarbu, kad aplikacija graziai atrodytu. 
+Uzdeciau pagrindiniam inputui padding left, kad nebutu taip prilipes prie
+krasto.
 
+Call my parents keisciau i enter new todo, gal ir teksta padaryciau pilka
+ir ne toki rysku, kad atrodytu daugiau kaip place holderis, o nes dabar
+maziau panasus i inputa, atrodytu, kaip iremintas paragrafas.
+*/
 
 .container {
     background-color: #F7F7F7;
