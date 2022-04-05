@@ -1,6 +1,4 @@
-
-
- let body = document.querySelector('body')
+let body = document.querySelector('body')
 const todoListUl  = document.querySelector('#todo-list');
 const button =  document.querySelector('#plus-button');
 const input =  document.querySelector('#add-work-input');
@@ -20,10 +18,6 @@ let taskProgress = document.createElement('progress');
     taskProgress.setAttribute('max', taskProgressMax);
     taskProgress.setAttribute('value', taskProgressValue);
     taskProgress.classList.add('task-progress');
-
-
-
-
 
 
 
@@ -235,9 +229,3 @@ let footerText = document.querySelector('.footer-text');
 window.addEventListener("beforeunload", function(){
     localStorage.setItem('job', JSON.stringify(tasksArray))
   })
-
-
-// for (let a of tasksArray) {
-//     console.log(a)
-// }
- 
